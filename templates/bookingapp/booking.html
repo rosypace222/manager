@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+
+    <h1>Бронювання</h1>
+    <div class="row">
+        <div class="col">
+                <form action="" method="post">
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Дата заїзду</label>
+                    <input  required name="start_datetime"  value="{{ start_date }}"  type="datetime-local" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Дата виїзду</label>
+                    <input required name="end_datetime"  value="{{ end_date }}"  type="datetime-local" class="form-control" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Введіть контактний номер телефону:</label>
+                    <input required name="phone" type="tel" class="form-control" >
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+      <img src="{{ room.image.url }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> {{ room.numbers }} - {{ room.category.title }}</h5>
+        <p class="card-text">Місць: {{room.capacity}}</p>
+        <p class="card-text">{{room.description}}</p>
+      </div>
+    </div>
+        </div>
+    </div>
+  </div>
+
+
+{% endblock %}

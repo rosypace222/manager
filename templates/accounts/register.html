@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <div class="container">
+       <h1 class="text-center">Створення профілю</h1>
+       <form action="{% url 'register' %}" method="post">
+          {% csrf_token %}
+            {{ form.as_div }}
+           <button type="submit" class="btn btn-light">
+               Створити профіль
+           </button>
+       </form>
+   </div>
+{% endblock %}
